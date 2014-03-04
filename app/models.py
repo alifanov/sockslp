@@ -8,7 +8,7 @@ class CallOrder(models.Model):
     created = models.DateTimeField(verbose_name=u'Дата создания', auto_now_add=True)
 
     def __unicode__(self):
-        return u'{}: {}'.format(self.name, self.phone)
+        return u'{} -- {}: {}'.format(self.created, self.name, self.phone)
 
     class Meta:
         verbose_name = u'Заказ звонка'
@@ -22,7 +22,7 @@ class Order(models.Model):
     created = models.DateTimeField(verbose_name=u'Дата создания', auto_now_add=True)
 
     def __unicode__(self):
-        return u'[{}]({}): {}'.format(self.email, self.name, self.phone)
+        return u'{} -- [{}]({}): {}'.format(self.created, self.email, self.name, self.phone)
 
     class Meta:
         verbose_name = u'Заказ'
