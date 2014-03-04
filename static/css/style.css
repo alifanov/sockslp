@@ -76,3 +76,16 @@ footer {
     padding: 30px;;
     padding-bottom: 10px;;
 }
+
+.price {
+    position: absolute;
+    left: 430px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3276B1;
+    top: -20px;
+    background: #eee;
+    padding: 10px;
+    width: 120px;
+    border-radius: 0px 0px 10px 10px;
+}
