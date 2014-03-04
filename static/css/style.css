@@ -79,13 +79,13 @@ footer {
 
 .price {
     position: absolute;
-    left: 430px;
+    left: -45px;
     font-size: 30px;
     font-weight: bold;
-    color: #3276B1;
+    color: white;
     top: -20px;
-    background: #eee;
+    background: #5cb85c;
     padding: 10px;
-    width: 120px;
-    border-radius: 0px 0px 10px 10px;
+    width: 160px;
+    border-radius: 5px 0px 10px 0px;
 }
