@@ -1,0 +1,78 @@
+body {
+    background: url('../img/bg.png') repeat-x;
+}
+
+.head {
+    background: white;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.feedback .panel-body {
+    min-height: 125px;
+}
+
+.title-utp {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.old-price {
+    color: red;
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+.new-price {
+    font-size: 24px;
+}
+
+.profit {
+    background: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 0px;
+}
+
+.feedback {
+    background: #eee;
+}
+
+.feedback .panel img {
+    margin-right: 10px;
+}
+
+.phone-footer{
+    font-size: 19px;
+}
+
+.email-footer {
+    font-size: 23px;
+}
+
+footer {
+    background: url('../img/bg-footer.jpg');
+    min-height: 200px;
+    color: white;
+}
+
+.call-order-form {
+    padding: 30px;
+    width: 365px;
+}
+
+.call-order-form h4 {
+    font-size: 14px;
+}
+
+.thx p{
+    padding: 30px;;
+    padding-bottom: 10px;;
+}
