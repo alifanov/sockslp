@@ -10,9 +10,9 @@ def call_order(request):
             name = request.POST['name'],
             phone = request.POST['phone']
         )
-#        send_mail(u'Новая заявка на звонок', u'{}\n{}'.format(
-#            request.POST['name'],request.POST['phone']
-#        ),'info@socks.oldlord.ru', ['lifanov.a.v@gmail.com'])
+        send_mail(u'Новая заявка на звонок', u'{}\n{}'.format(
+            request.POST['name'],request.POST['phone']
+        ),'info@socks.oldlord.ru', ['lifanov.a.v@gmail.com'])
     return HttpResponse('OK')
 
 def order(request):
@@ -22,7 +22,7 @@ def order(request):
             phone = request.POST['phone'],
             email = request.POST['email']
         )
-#        send_mail(u'Новая заявка', u'{}\n{}\n{}'.format(
-#            request.POST['name'],request.POST['phone'], request.POST['email']
-#        ),'info@socks.oldlord.ru', ['lifanov.a.v@gmail.com'])
+        send_mail(u'Новая заявка', u'{}\n{}\n{}'.format(
+            request.POST['name'],request.POST['phone'], request.POST['email']
+        ),'info@socks.oldlord.ru', ['lifanov.a.v@gmail.com'])
     return HttpResponse('OK')
