@@ -9,7 +9,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^socks$', TemplateView.as_view(template_name='socks.html'), name='home'),
+    url(r'^socks/$', TemplateView.as_view(template_name='socks.html'), name='home'),
     url(r'^order/$', order),
     url(r'^call_order/$', call_order),
 
