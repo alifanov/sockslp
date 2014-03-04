@@ -111,7 +111,7 @@ ROOT_URLCONF = 'sockslp.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'sockslp.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/vampire/PycharmProjects/sockslp/templates',)
+TEMPLATE_DIRS = (BASE_DIR+'/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
