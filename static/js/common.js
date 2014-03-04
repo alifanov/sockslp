@@ -12,7 +12,7 @@ $(function(){
             type: 'POST',
             data: $(this).serializeArray(),
             success: function(){
-                $(".call-order-form input").val('');
+                $(".call-order-form input[type!='hidden']").val('');
                 $(".call-order").modal('hide');
                 $(".thx").modal('show');
             }
@@ -25,7 +25,7 @@ $(function(){
             type: 'POST',
             data: $(this).serializeArray(),
             success: function(){
-                $(".footer-call-order-form input").val('');
+                $(".footer-call-order-form input[type!='hidden']").val('');
                 $(".thx").modal('show');
             }
         });
@@ -37,7 +37,7 @@ $(function(){
             type: 'POST',
             data: $(this).serializeArray(),
             success: function(){
-                $(".order-form input").val('');
+                $(".order-form input[type!='hidden']").val('');
                 $(".thx").modal('show');
             }
         });
