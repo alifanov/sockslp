@@ -1,8 +1,17 @@
 # coding: utf-8
 # Create your views here.
-from app.models import CallOrder, Order
+from app.models import CallOrder, Order, Target
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from django.views.generic import TemplateView
+
+class FoodView(TemplateView):
+    template_name = 'food.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(FoodView, self).get_context_data(**kwargs)
+        ctx['food'] = Target.objects.get(sitename=self.kwargs['site'])
+        return ctx
 
 def call_order(request):
     if 'name' in request.POST and 'phone' in request.POST:

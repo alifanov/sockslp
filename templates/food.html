@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ food.title }}</title>
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png" />
+
+    <!-- Bootstrap -->
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="head">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="company"><h2 style="color:#02BEE0;">Old Lord</h2></div>
+                <div class="description">{{ food.description|safe }}</div>
+            </div>
+            <div class="col-lg-5"></div>
+            <div class="col-lg-3"><h2 style="font-size: 32px;">8 (812) 244-94-78</h2>
+                <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".call-order">Заказать обратный звонок</button></div>
+        </div>
+    </div>
+</div>
+
+<!--<nav class="navbar navbar-default">-->
+<!--<div class="container">-->
+<!--<a class="navbar-brand" href="/">Носки по подписке</a>-->
+<!--<div class="navbar-collapse collapse">-->
+<!--<ul class=" nav navbar-nav navbar-right">-->
+<!--<li>-->
+<!--<a href="#">8 (812) 244-94-78</a>-->
+<!---->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</nav>-->
+
+<div class="container">
+    <div class="jumbotron" style="background: white;">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="price">{{ food.price }} руб</div>
+                <img src="{{ MEDIA_URL }}{{ food.banner }}" height="400" class=" center-block"/>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <div class="title-utp" style="text-align: center; font-size: 27px;">{{ food.banner_text }}</div>
+                <!--<div style="text-align: center"><span class="old-price">4 500 </span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="new-price">2 990</span></div>-->
+                <div class="panel" style="background: #eee;">
+                    <div class="panel-body" style="height: 100%;">
+                        <form class="order-form" role="form" style=";" action="/order/" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="formName">Ваше имя</label>
+                                <input required="required" type="text" name="name" class="form-control" id="formName" placeholder="Введите ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail">Ваш email</label>
+                                <input required="required" type="email" name="email" class="form-control" id="formEmail" placeholder="Введите ваш Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="formPhone">Ваш телефон</label>
+                                <input required="required" type="text" name="phone" class="form-control" id="formPhone" placeholder="Введите ваш Телефон">
+                            </div>
+                            <button class="btn btn-success btn-block" type="submit">Заказать</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="profit">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="media">
+                    <img src="{{ STATIC_URL }}img/deli.png" class="media-object pull-left" />
+                    <div class="media-body" style="padding-top: 20px;">
+                        <h4 class="media-heading">БЕСПЛАТНАЯ ДОСТАВКА</h4>
+                        <p>
+                            Мы доставим заказанный товар совершенно бесплатно по всей России</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <img src="{{ STATIC_URL }}img/gift.png" class="media-object pull-left" />
+                    <div class="media-body" style="padding-top: 20px;">
+                        <h4 class="media-heading">ПОДАРОК КАЖДОМУ</h4>
+                        <p>Если вы оформляете подписку сразу на несколько месяцев (2 и более) мы дарим вам подарок.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="media">
+                    <img src="{{ STATIC_URL }}img/rus.png" class="media-object pull-left" />
+                    <div class="media-body" style="padding-top: 20px;">
+                        <h4 class="media-heading">СДЕЛАНО В РОССИИ</h4>
+                        <p>Все носки произведены в России. Только натуральные материалы.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <img src="{{ STATIC_URL }}img/schedule.png" class="media-object pull-left" />
+                    <div class="media-body" style="padding-top: 20px;">
+                        <h4 class="media-heading">РАБОТАЕМ БЕЗ ВЫХОДНЫХ</h4>
+                        <p>Мы знаем как важна скорость в современном мире и как важна доступность. Поэтому мы работаем без выходных и всегда на связи с нашими клиентами.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="feedback">
+    <div class="container">
+        <h2 style="text-align: center;">Как это работает</h2>
+        <hr />
+
+        <div class="row work">
+            <div class="col-lg-3">
+                <img src="{{ MEDIA_URL }}{{ food.sad_pet }}" width="128" /><br />
+                <h4>Забыли купить еду для питомца</h4>
+                <p>
+                    Вы возвращаетесь домой. Сильно устали. И только войдя домой, Вы вспоминаете, что забыли купить корм для своего любимого питомца.
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <img src="{{ STATIC_URL }}img/phone.png" width="128" /><br />
+                <h4>Позвоните нам или оформите заявку на сайте</h4>
+                <p>
+                    Позвоните нам или оформите заявку на сайте. Наши менеджеры свяжутся с Вами и согласуют условия доставки и объем корма для животного.
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <img src="{{ STATIC_URL }}img/currier.jpg" width="128" /><br />
+                <h4>Наш курьер прибудет с посылкой для Вашего питомца</h4>
+                <p>
+                    После оформления каждый месяц (или любой другой период) наши курьеры будут доставлять Вам корм для Вашего питомца.
+                    И Вам не нужно будет каждый раз оформлять заказ.
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <img src="{{ MEDIA_URL }}{{ food.nice_pet }}" width="128" /><br />
+                <h4>Всегда сытый и довольный питомец</h4>
+                <p>
+                    Теперь Вы можете не беспокоиться, что забудете купить корм для Вашего любимца. С нами Ваш питомец всегда будет накормлен.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Контакты</h1>
+                <div class="phone-footer">8 (812) 244-94-78</div>
+                <div class="email-footer">info@oldlord.ru</div>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">
+                <h4 style="text-align: right;font-size: 15px;">Вы можете заказать обратный звонок</h4>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form role="form" class="footer-call-order-form" method="POST" action="/call_order/">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Имя">
+                            </div>
+                            <button class="btn btn-block btn-primary">Заказать звонок</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade call-order" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 365px;">
+        <div class="modal-content">
+            <form role="form" class="call-order-form" method="POST" action="/call_order/">
+                {% csrf_token %}
+                <h4>Заполните форму ниже и мы вам перезвоним</h4>
+                <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Имя">
+                </div>
+                <button class="btn btn-block btn-primary">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade thx" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <p class="text-center">
+                Спасибо, Ваша заявка успешно отправлена.<br />
+                Мы с Вами скоро свяжемся.
+            </p>
+            <div class="row" style="padding-bottom: 20px;">
+                <div class="col-sm-12">
+                    <button class="btn btn-default center-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}js/common.js"></script>
+</body>
+</html>

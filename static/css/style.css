@@ -90,3 +90,16 @@ footer {
     border-radius: 5px 0px 10px 0px;
     box-shadow: 2px 2px 12px 1px black;
 }
+
+.feedback .work {
+    text-align: center;
+    padding-bottom: 20px;;
+}
+
+.feedback .work p{
+    text-align: justify;
+}
+
+.feedback .work img {
+    border-radius: 5px;
+}
